@@ -1,0 +1,19 @@
+# .github/workflows/issues.yml
+name: Issues Event Logger
+
+on:
+  issues:
+    types: [opened, edited, closed]
+
+jobs:
+  log-issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print issue details
+        run: |
+          echo "Issue Title: ${{ github.event.issue.title }}"
+          echo "Issue Body: ${{ github.event.issue.body }}"
+          echo "Issue State: ${{ github.event.issue.state }}"
+          echo "Issue Number: ${{ github.event.issue.number }}"
+          echo "Issue URL: ${{ github.event.issue.html_url }}"

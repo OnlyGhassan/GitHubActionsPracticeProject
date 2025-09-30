@@ -1,0 +1,7 @@
+create two workflows:
+first:
+    - Lint, test, and deploy on "push"
+    - run the lint, test, and build script
+
+seconed:
+    - output "issues" event details using "echo"
